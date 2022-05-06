@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center mt-5" >
+  <div style="width: 30%">
+    <app-alert></app-alert>
+  </div>
+</div>
+
+<div class="container mt-5 w-25"  *ngIf="appareils.length > 0">
+
+  <div class="d-flex justify-content-between mt-3">
+
+    <div>
+
+      <button mat-icon-button class="btn btn-sm bg-transparent"
+              [class.bg-primary]="true"
+              (click)="onPower()">
+        <mat-icon color="accent" class="material-icons-outlined">
+          power_settings_new
+        </mat-icon >
+      </button>
+
+<!--      <button (click)="onAllOn()">AllOn</button>-->
+
+    </div>
+
+    <button mat-icon-button color="primary" (click)="addAppareil()">
+      <mat-icon aria-label="Add">add</mat-icon>
+    </button>
+
+  </div>
+
+    <div class="">
+
+      <ul class="list-group mt-4" *ngFor="let appareil of appareils">
+
+        <app-appareil
+          [appareilName]="appareil.name"
+          [appareilStatus]="appareil.status"
+          (statusEvent)="statusEvent($event)">
+        </app-appareil>
+
+      </ul>
+
+    </div>
+</div>

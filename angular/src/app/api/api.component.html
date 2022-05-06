@@ -1,0 +1,32 @@
+<app-header (sidenav)="sidenav.toggle()"></app-header>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" (click)="sidenav.toggle()">
+    <mat-menu ></mat-menu>
+    <mat-divider></mat-divider>
+    <button mat-menu-item [routerLink]="['/home']"    routerLinkActive="active">Home</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/users"         routerLinkActive="active">User</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/achats"        routerLinkActive="active">Medication</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/appareils"     routerLinkActive="active">Appareils</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/articles"      routerLinkActive="active">Articles</button>
+<!--    <mat-divider></mat-divider>-->
+<!--    <button mat-menu-item routerLink="/test"          routerLinkActive="active">Test</button>-->
+<!--    <mat-divider></mat-divider>-->
+<!--    <button mat-menu-item routerLink="/hello"         routerLinkActive="active">Hello</button>-->
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/panier"        routerLinkActive="active">Panier</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="users/profil"        routerLinkActive="active">Profil</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="/login"          routerLinkActive="active">Login</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

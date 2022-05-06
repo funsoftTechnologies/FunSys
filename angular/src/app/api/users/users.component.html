@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center mt-5" >
+  <div style="width: 30%">
+    <app-alert></app-alert>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+
+  <div style="width: 50%">
+
+    <mat-toolbar color="primary">
+      <h3>Liste Users </h3>
+    </mat-toolbar>
+
+    <app-alert></app-alert>
+
+    <mat-table class="m-0" [dataSource]="dataSource" matSort>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+      </ng-container>
+
+      <!-- Sign Column -->
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+      </ng-container>
+
+      <!-- Total Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+      </ng-container>
+
+      <!-- Total Column -->
+      <ng-container matColumnDef="actived">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Actived </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.actived}} </mat-cell>
+      </ng-container>
+
+      <!-- Total Column -->
+      <ng-container matColumnDef="roles">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Roles </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <div *ngFor="let role of user.roles">{{role.roleName}}</div>  </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row [routerLink]="['user.id']" [state]=user
+               *matRowDef="let user; columns: displayedColumns;"></mat-row>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter</td>
+      </tr>
+
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+  </div>
+</div>

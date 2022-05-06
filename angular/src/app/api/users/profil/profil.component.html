@@ -1,0 +1,104 @@
+<div *ngIf="submitted" class="alert  alert-success " role="alert">
+  Enregistrement effectué avec succès
+</div>
+
+<!--<div class="d-flex justify-content-center mt-5  ">-->
+<!--  <mat-card-actions class="text-center">-->
+<!--    <button *ngIf="!edit" mat-flat-button color="primary" (click)="edit = !edit">Edit profil</button>-->
+<!--    <button *ngIf="edit"  mat-flat-button color="primary" (click)="edit = !edit">Show profil</button>-->
+<!--  </mat-card-actions>-->
+<!--</div>-->
+
+
+<div class="d-flex justify-content-center mt-5  ">
+
+  <mat-card *ngIf="user" class="example-card p-0 me-5" style="width: 18rem;" >
+
+    <div>
+      <input type="file" id="fileInput" hidden class="custom-file-input" (change)="fileChangeEvent($event)"/>
+      <img class="card-img-top edit" width="18rem" (click)="openInput()" [src]="previewImage" alt="Click to add photo profil">
+    </div>
+
+    <mat-card-content class="text-center">
+      <br>
+      <div class="d-flex justify-content-center text-center align-items-center">
+
+        <mat-form-field class="text-center" appearance="">
+          <input matInput autocomplete="off" required
+                 (keypress)="onPatchUsername($event)"
+                 [formControl]="usernameFormControl"
+                 [readonly]="!isPatchUsername"
+                 (mouseenter)="isPatchUsername = true"
+                 (mouseleave)="isPatchUsername = false">
+        </mat-form-field>
+
+<!--        <button class="btn btn-sm ms-2" (click)="onPatchUsername()" [hidden]="patchUsername">-->
+<!--          <mat-icon style="font-size: 18px; color: #d63384">edit</mat-icon>-->
+<!--        </button>-->
+<!--        <button class="btn btn-sm ms-2 p-0" (click)="onPatchUsername()" [hidden]="!patchUsername">-->
+<!--          <mat-icon style="font-size: 18px; color: #d63384">save</mat-icon>-->
+<!--        </button>-->
+<!--        <button class="btn btn-sm m-0 p-0" (click)="onPatchUsername()" [hidden]="!patchUsername">-->
+<!--          <mat-icon style="font-size: 18px; color: #d63384">cancel</mat-icon>-->
+<!--        </button>-->
+
+      </div>
+
+      <span style="opacity: 0.5">Ingénieur JAVA J2EE</span><br>
+      <br>
+      <mat-icon style="vertical-align: middle; margin-right: 5px">phone</mat-icon>: 07 69 59 31 29<br>
+      <mat-icon style="vertical-align: middle; margin-right: 5px;">mail</mat-icon>: {{user.email}}<br>
+      <br>
+      Funsoft Technologies<br>
+      Toulouse  France<br>
+      <div class="mb-3"></div>
+    </mat-card-content>
+
+  </mat-card>
+
+  <div *ngIf="showCropper" style="width: 18rem;">
+    <image-cropper [class.bg-dark]="true"
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 4"
+      [resizeToWidth]="256"
+      [cropperMinWidth]="256"
+      [onlyScaleDown]="true"
+      [roundCropper]="false"
+      format="png"
+      outputType="both"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded($event)"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      [style.display]="showCropper ? null : 'none'"
+      [alignImage]="'center'"></image-cropper>
+
+      <div class="form-group mt-5" fxLayout="row" fxLayoutAlign="space-evenly  center">
+        <button mat-raised-button color="primary" class="" type="submit" (click)="onSubmit()">Save</button>
+        <button mat-raised-button color="primary" type="reset" (click)="onReset()">Cancel</button>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!--    <form class="d-flex flex-column example-form mt-4 mb-2" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)" autocomplete="off">-->
+
+<!--      <mat-form-field class="example-full-width" appearance="fill">-->
+<!--        <mat-label>Enter your username</mat-label>-->
+<!--        <input matInput placeholder="Ex. Paul" formControlName="username">-->
+<!--      </mat-form-field>-->
+
+<!--      <mat-form-field class="example-full-width" appearance="fill">-->
+<!--        <mat-label>Enter your email</mat-label>-->
+<!--        <input matInput placeholder="paul@example.com" formControlName="email">-->
+<!--      </mat-form-field>-->
+
+<!--    <div class="example-full-width">-->
+<!--      <input class="form-control" id="formFileLg" type="file"-->
+<!--             (change)="fileChangeEvent($event)">-->
+<!--    </div>-->

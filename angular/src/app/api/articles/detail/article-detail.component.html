@@ -1,0 +1,67 @@
+<div mat-dialog-content  [formGroup]="articleForm">
+
+  <div class="d-flex justify-content-between example-form">
+    <h1 mat-dialog-title><span><mat-icon>create</mat-icon>{{modalTitle}}</span></h1>
+  </div>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" formControlName="name">
+          <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Price" formControlName="price">
+        </mat-form-field>
+        <div *ngIf="formErrors.price" class="text-danger"> {{ formErrors.price }} </div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Sign" formControlName="sign">
+        </mat-form-field>
+      </td>
+      <div *ngIf="formErrors.sign" class="text-danger"> {{ formErrors.sign }} </div>
+    </tr>
+  </table>
+
+
+<!--  <table class="example-full-width">-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <mat-form-field class="example-full-width">-->
+<!--          <input matInput placeholder="Name" formControlName="name">-->
+<!--        </mat-form-field>-->
+<!--        <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <mat-form-field class="example-full-width">-->
+<!--          <mat-select placeholder="Name" formControlName="name">-->
+<!--            <mat-option *ngFor="let a of articless$ | async" [value]="a"> {{ a.name }}  </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+<!--        <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
+
+</div>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>&nbsp;
+  <button mat-raised-button color="primary" [disabled]="articleForm.invalid" (click)="onSubmit()">{{modalBtnTitle}}</button>
+</mat-dialog-actions>
+
+

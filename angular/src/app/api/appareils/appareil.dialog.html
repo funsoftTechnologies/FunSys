@@ -1,0 +1,57 @@
+<div mat-dialog-content  [formGroup]="appareilForm">
+
+  <div class="d-flex justify-content-between example-form text-white">
+    <h1 mat-dialog-title><span class="text-white"><mat-icon>create</mat-icon>{{modalTitle}}</span></h1>
+  </div>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" formControlName="name" autocomplete="off">
+          <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Status" formControlName="status" autocomplete="off">
+        </mat-form-field>
+        <div *ngIf="formErrors.status" [style.color]="'accent'" class=""> {{ formErrors.status }} </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <!--  <table class="example-full-width">-->
+  <!--    <tr>-->
+  <!--      <td>-->
+  <!--        <mat-form-field class="example-full-width">-->
+  <!--          <input matInput placeholder="Name" formControlName="name">-->
+  <!--        </mat-form-field>-->
+  <!--        <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>-->
+  <!--      </td>-->
+  <!--      <td>-->
+  <!--        <mat-form-field class="example-full-width">-->
+  <!--          <mat-select placeholder="Name" formControlName="name">-->
+  <!--            <mat-option *ngFor="let a of articless$ | async" [value]="a"> {{ a.name }}  </mat-option>-->
+  <!--          </mat-select>-->
+  <!--        </mat-form-field>-->
+  <!--        <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>-->
+  <!--      </td>-->
+  <!--    </tr>-->
+  <!--  </table>-->
+
+</div>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="dialogRef.close()">Cancel</button>&nbsp;
+  <button mat-raised-button color="primary" [disabled]="appareilForm.invalid" (click)="onSubmit()">{{modalBtnTitle}}</button>
+</mat-dialog-actions>
+
+

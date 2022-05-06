@@ -1,0 +1,11 @@
+.cellule {
+  width: 10px;
+  height: 10px;
+  background: darkcyan;
+  font-size: 5px;
+}
+
+.cellule:hover {
+  background: #303030;
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.mat-toolbar {
+  height: 45px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+.mat-column-name {
+  flex: 0 0 50%;
+}
+
+.isComponent {
+  width: 50%;
+  margin: 100px auto 0;
+}
+
+/*.mat-column-price {*/
+/*  width: 130px;*/
+/*}*/
+
+/*.mat-column-quantity {*/
+/*  width: 140px;*/
+/*}*/
+
+/*.mat-column-sousTotal {*/
+/*  width: 140px;*/
+/*}*/
+
+/*.mat-column-action {*/
+/*  width: 80px;*/
+/*}*/
+
+/*input[type="number"] {*/
+/*  margin: 10px;*/
+/*  height: 50px;*/
+/*  border: none;*/
+/*}*/
+
+/*input[type=number]::-webkit-inner-spin-button,*/
+/*input[type=number]::-webkit-outer-spin-button {*/
+/*  opacity: 1;*/
+/*  height: 60px;*/
+/*  padding: 5px;*/
+/*}*/
+

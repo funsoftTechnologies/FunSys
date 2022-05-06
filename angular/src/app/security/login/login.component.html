@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+
+  <div class="d-flex justify-content-center mt-5">
+    <form class="login-form-style"  (ngSubmit)="onSubmit()"  [formGroup]="loginForm">
+
+      <div class="mb-3">
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      </div>
+
+      <div class="mb-3">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary"
+                mat-raised-button color="primary"
+                [disabled]="!loginForm.valid">LOGIN</button>
+
+        <span style="color: #303F9F">
+          <a [routerLink]="['/register']"
+             class="btn btn-link">Register</a></span>
+      </div>
+
+    </form>
+  </div>
+
+</mat-sidenav-container>

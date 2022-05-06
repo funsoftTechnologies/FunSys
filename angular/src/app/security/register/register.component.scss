@@ -1,0 +1,30 @@
+.mat-sidenav-container {
+  height: 100vh;
+  //background-color: #a94442;
+}
+
+.register-form-style{
+  margin-top: 150px;
+  width:250px;
+}
+
+mat-form-field {
+  width: 250px;
+}
+
+/*input:-internal-autofill-selected {*/
+/*  background-color: #303030 !important;*/
+/*  color: white !important;*/
+/*}*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
+  color: white;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill{
+  -webkit-text-fill-color: white !important;
+}

@@ -1,0 +1,9 @@
+.app-allume {
+  color: green;
+  border: green;
+}
+
+.app-eteint {
+  color: red;
+  border-color: red;
+}

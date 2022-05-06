@@ -1,0 +1,34 @@
+<!--// Marche tres bien-->
+<!--<mat-grid-list cols="110" rowHeight="1:1">-->
+<!--  <div *ngFor="let item of [].constructor(100); let i = index" >-->
+<!--    <mat-grid-tile (click)="onClick($event)"></mat-grid-tile>-->
+<!--  </div>-->
+<!--</mat-grid-list>-->
+
+<!--  <mat-grid-list cols="30" >-->
+<!--      <div *ngFor="let row of rows;let j = index">-->
+<!--        <div *ngFor="let row of cols;let i = index">-->
+<!--          <div class="d-flex flex-wrap">-->
+<!--            <mat-grid-tile>-->
+<!--  &lt;!&ndash;            {{i}}{{j}}&ndash;&gt;-->
+<!--            </mat-grid-tile>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </mat-grid-list>-->
+
+<!--(click)="onColRow(i,j)"-->
+<!--<mat-grid-list cols="100" rowHeight="1:1">-->
+<!--  <div *ngFor="let row of [].constructor(48);let j = index">-->
+<!--    <div *ngFor="let col of [].constructor(100);let i = index" >-->
+<!--      <mat-grid-tile [style.background]="'yellow'" id="{{j}}{{i}}">-->
+<!--      </mat-grid-tile>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</mat-grid-list>-->
+
+
+<div *ngFor="let row of [].constructor(47);let j = index" class="wrapper">
+  <div id="{{j*100+i}}" *ngFor="let col of [].constructor(100);let i = index" class="border border-light">.</div>
+</div>
+

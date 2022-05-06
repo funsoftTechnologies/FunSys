@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center mt-5" >
+  <div style="width: 30%">
+    <app-alert></app-alert>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+
+  <div style="width: 30%">
+
+    <mat-toolbar color="primary">
+      <h3>Liste Achats </h3>
+    </mat-toolbar>
+
+    <app-alert></app-alert>
+
+    <mat-table class="m-0" [dataSource]="dataSource" matSort>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+        <mat-cell *matCellDef="let achat"> {{achat.dateAchat  | date:'mediumDate':'+0200':'fr'}} </mat-cell>
+      </ng-container>
+
+      <!-- Sign Column -->
+      <ng-container matColumnDef="sign">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Sign </mat-header-cell>
+        <mat-cell *matCellDef="let achat"> {{achat.sign}} </mat-cell>
+      </ng-container>
+
+      <!-- Total Column -->
+      <ng-container matColumnDef="total">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Total </mat-header-cell>
+        <mat-cell *matCellDef="let achat"> {{achat.total| number: '1.2-2'}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row [routerLink]="['achat']" [state]=achat
+               *matRowDef="let achat; columns: displayedColumns;"></mat-row>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input}}"</td>
+      </tr>
+
+    </mat-table>
+    <mat-paginator [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page of users"></mat-paginator>
+
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div mat-dialog-content  [formGroup]="medicationForm">
+
+  <div class="d-flex justify-content-between example-form">
+    <h1 mat-dialog-title><span><mat-icon>create</mat-icon>{{modalTitle}}</span></h1>
+  </div>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" formControlName="name">
+          <div *ngIf="formErrors.name" class="text-danger"> {{ formErrors.name }} </div>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" >
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Laboratory" formControlName="laboratory">
+        </mat-form-field>
+        <div *ngIf="formErrors.laboratory" class="text-danger"> {{ formErrors.laboratory }} </div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Type" formControlName="type">
+        </mat-form-field>
+      </td>
+      <div *ngIf="formErrors.type" class="text-danger"> {{ formErrors.type }} </div>
+    </tr>
+  </table>
+
+
+  <div class="col-2 d-flex align-items-baseline align-baseline">
+
+    <input type="number" class="form-control" min="1" value="{{ligneDepense.quantite}}" style="width: 60px"
+           (change)="changeQuantite(ligneDepense, $event.target)">
+
+  </div>
+
+</div>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>&nbsp;
+  <button mat-raised-button color="primary" [disabled]="medicationForm.invalid" (click)="onSubmit()">{{modalBtnTitle}}</button>
+</mat-dialog-actions>
+
+

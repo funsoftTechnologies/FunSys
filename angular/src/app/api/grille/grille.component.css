@@ -1,0 +1,15 @@
+/*mat-grid-tile {*/
+/*  background: darkcyan;*/
+/*}*/
+
+/*mat-grid-tile:hover {*/
+/*  background: #303030;*/
+/*  cursor: pointer;*/
+/*}*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(100,1fr);
+  grid-template-rows: 20px;
+  background-color: white;
+}

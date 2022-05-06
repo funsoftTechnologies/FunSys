@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center mt-5" >
+  <div style="width: 30%">
+    <app-alert></app-alert>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5" *ngIf="articles.length > 0">
+
+<div style="width: 30%">
+
+  <mat-toolbar color="primary">
+    <h3>Liste Article Lidl</h3>
+  </mat-toolbar>
+
+  <app-alert></app-alert>
+
+    <div *ngFor="let a of articles"  class="mb-2">
+      <div class="pt-1 pb-1">
+        <mat-card class="d-flex justify-content-between align-items-baseline">
+          <span class="mat-typography">{{a.name}}</span>
+
+          <div class="d-inline-flex align-items-baseline">
+            <span class="mat-typography text-uppercase">{{a.price}}</span>
+
+  <!--                    <button mat-button color="accent" (click)="removeFromCart(a); selectedValue = a.id">-->
+              <mat-icon class="d-inline-flex ms-5" color="accent" (click)="removeFromPanier(a); selectedValue = a.id">remove_shopping_cart</mat-icon>
+  <!--                    </button>-->
+  <!--                    <button mat-button [hidden]="selectedValue==a.id" class="m-0" (click)="addToCart(a); selectedValue = a.id"-->
+  <!--                            [color]=" selectedValue == a.id ? 'accent' : 'primary'">-->
+              <mat-icon class="d-inline-flex ms-2" [hidden]="selectedValue==a.id" [color]=" selectedValue == a.id ? 'accent' : 'primary'" (click)="addToCart(a); selectedValue = a.id">add_shopping_cart</mat-icon>
+  <!--                    </button>-->
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

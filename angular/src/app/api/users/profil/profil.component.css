@@ -1,0 +1,85 @@
+.example-form {
+  min-width: 60px;
+  max-width: 18rem;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.icon_visibility {
+  visibility: hidden;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+.edit:hover + .icon_visibility {
+  display: block;
+  color: dodgerblue;
+  visibility: visible;
+}
+
+
+
+
+
+
+/*.marginTopAndWidth {*/
+/*  margin: auto;*/
+/*  margin-top: 22px;*/
+/*}*/
+/*.mat-form-field-size {*/
+/*  !*width: 400px;*!*/
+/*}*/
+
+/*.profile {*/
+/*  position: relative;*/
+/*  display: inline-block;*/
+/*}*/
+
+/*.profile:hover .edit {*/
+/*  display: block;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.edit {*/
+/*  padding-top: 7px;*/
+/*  padding-right: 7px;*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  top: 0;*/
+/*  display: none;*/
+/*}*/
+
+/*.edit a {*/
+/*  color: #000;*/
+/*}*/
+
+/*mat-grid-list {*/
+/*}*/
+
+/*mat-grid-tile {*/
+/*}*/
+
+/*mat-grid-tile-footer {*/
+/*  background-color: #007bff;*/
+/*}*/
+
+/*.mat-icon {*/
+/*  font-size: 20px;*/
+/*  width: 20px;*/
+/*}*/

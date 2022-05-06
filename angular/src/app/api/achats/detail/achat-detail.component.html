@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-center mt-5" >
+
+  <div *ngIf="achat" style="width: 30%">
+
+    <mat-toolbar color="primary">
+      <h3>{{achat.sign}} - {{achat.dateAchat | date:'mediumDate':'+0200':'fr'}}</h3>
+    </mat-toolbar>
+
+    <div class="row d-flex mat-card mat-typography p-3 m-0 ">
+      <div class="col-1">
+        <span>#</span>
+      </div>
+      <div class="col-5">
+        <span>Article</span>
+      </div>
+      <div class="col-2">
+        <span>P.U.EUR</span>
+      </div>
+      <div class="col-2">
+        <span>Qté</span>
+      </div>
+      <div class="col-2">
+        <span>EUR</span>
+      </div>
+    </div>
+
+    <div *ngFor="let ligneDepense of achat.ligneDepenses; let index = index; let isFirst = first; let isOdd = odd;"
+         class="row d-flex mat-card mat-typography align-items-baseline p-3 m-0" >
+      <div class="col-1">
+        <span class="">{{index}}</span>
+      </div>
+      <div class="col-5">
+        <span>{{ligneDepense.article.name}}</span>
+      </div>
+      <div class="col-2">
+        <span>{{ligneDepense.article.price}}</span>
+      </div>
+      <div class="col-2 d-flex align-items-baseline align-baseline">
+        <span>{{ligneDepense.quantite}}</span>
+      </div>
+      <div class="col-2 d-flex justify-content-between align-items-baseline">
+        <span>{{ligneDepense.total}}</span>
+      </div>
+    </div>
+
+    <div class="row d-flex mat-card card-footer mat-typography p-3 m-0">
+      <div class="col-1">
+        <span>Total</span>
+      </div>
+      <div class="col-5">
+      </div>
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <span>{{this.achat.total | number: '1.2-2'}}</span>
+      </div>
+    </div>
+  </div>
+</div>

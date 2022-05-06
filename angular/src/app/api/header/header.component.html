@@ -1,0 +1,56 @@
+<!--<mat-toolbar color="primary">-->
+<!--  <mat-toolbar-row>-->
+<!--    <span>{{title}}</span>-->
+<!--    <span class="spacer"></span>-->
+<!--    <app-menu-->
+<!--      [options]="options$ | async"-->
+<!--      (themeChange)="themeChangeHandler($event)">-->
+<!--    </app-menu>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<div>
+  <mat-toolbar color="" class="d-flex">
+    <div class="d-flex align-items-baseline">
+      <button mat-icon-button (click)="sidenaToggle()" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="ms-1 me-5">
+        <button mat-button routerLink="/home"   routerLinkActive="active">
+          <h1>Funsoft Technologies</h1>
+        </button>
+      </div>
+
+      <button mat-button routerLink="/achats"     routerLinkActive="active">Achats</button>
+      <button mat-button routerLink="/articles"   routerLinkActive="active">Articles</button>
+      <button mat-button routerLink="/users"      routerLinkActive="active">User</button>
+      <button mat-button routerLink="/appareils"  routerLinkActive="active">Appareils</button>
+      <button mat-button routerLink="/grille"     routerLinkActive="active">Grille</button>
+      <button mat-button routerLink="/matrix"     routerLinkActive="active">Matrix</button>
+<!--      <button mat-button routerLink="/test"       routerLinkActive="active">Test</button>-->
+<!--      <button mat-button routerLink="/hello"      routerLinkActive="active">Hello</button>-->
+    </div>
+
+    <div class="ms-5 flex-grow-1">
+      <input type="text"  class="form-control"  (keyup)="applyFilter($event)" #input placeholder="Search">
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center">
+      <button mat-icon-button [routerLink]="['/panier', { isComponent: 'true' }]" class="ms-5 me-3">
+        <mat-icon>add_shopping_cart</mat-icon><span class="mr-4 ml-2"></span></button>
+
+      <app-menu
+        [options]="options$ | async"
+        (themeChange)="themeChangeHandler($event)">
+      </app-menu>
+
+      <button mat-icon-button [routerLink]="['users/profil']" class="me-3">
+        <mat-icon>person</mat-icon></button>
+
+      <button mat-icon-button [routerLink]="['../login']" class="me-3">
+        <mat-icon>logout</mat-icon></button>
+    </div>
+
+  </mat-toolbar>
+</div>

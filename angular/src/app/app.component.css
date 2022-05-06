@@ -1,0 +1,27 @@
+.mat-sidenav-container {
+  position: absolute;
+  top:64px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.toolbar {
+  height: 12vh;
+}
+
+.sidenav-container {
+  height: 88vh;
+  /*background-color: #a94442;*/
+}
+
+.sidenav {
+  width: 200px;
+}
+
+

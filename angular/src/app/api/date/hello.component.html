@@ -1,0 +1,8 @@
+  <div class="d-flex justify-content-center mt-5">
+    <button mat-raised-button color="primary" class="btn btn-primary ms-3" (click)="sayHello()">Say Hello</button>
+  </div>
+
+  <div mat-card-content class="d-flex justify-content-center mt-5">
+    <h1 *ngIf="me">{{me.messageText}}</h1>
+  </div>
+
